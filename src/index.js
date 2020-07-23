@@ -1,22 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import API_KEY from '../.env';
+// import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
+// import { API_KEY } from '../.env';
 import App from './App';
 
+
+/*
+FILED GITUB ISSUE: https://github.com/Yelp/yelp-fusion/issues/579.
+Moving to rest in meantime
+
 const httpLink = createHttpLink({
-  uri: 'https://api.yelp.com/v3',
+  uri: 'https://api.yelp.com/v3/graphql',
   credentials: 'include',
 });
 
-console.log(API_KEY)
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
       authorization: `Bearer ${API_KEY}`,
-      'Content-Type': 'application/graphql',
+      'Access-Control-Allow-Origin': '*',
+      'content-type': 'application/json',
+      'Accept-Language': 'en-US',
+
     }
   }
 })
@@ -30,7 +37,7 @@ client.
   query({
     query: gql`
     query business {
-      business(id: "garaje-san-francisco") {
+      query business(id: "garaje-san-francisco") {
         name
         id
         alias
@@ -41,4 +48,6 @@ client.
   `
   })
   .then(result => console.log(result))
+  */
 ReactDOM.render(<App />, document.getElementById("root"));
+
