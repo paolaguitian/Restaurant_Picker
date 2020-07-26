@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Search from './search/Search';
+import 'antd/dist/antd.css';
 
 const App = () => {
   return (
-    <div>
-      Restaurant Picker
+    <div className="main">
+      <Search />
+      {/* Browse */}
     </div>
   )
 }

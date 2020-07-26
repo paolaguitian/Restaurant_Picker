@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Search.css'
 import logo from '../logo.png'
 import { Form, Input, Button } from 'antd';
 
-
+/*
+get current location option for location input
+submit button styling
+submit form  errors
+*/
 const Search = () => {
-  const [food, setFood] = useState('');
-  const [location, setLocation] = useState('');
-  const [submit, setSubmit] = useState(false);
 
   const onFinish = (values) => {
     console.log(values)
