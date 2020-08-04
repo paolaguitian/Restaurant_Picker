@@ -3,7 +3,6 @@ import './Search.css'
 import logo from '../logo.png'
 import { Form, Input, Button } from 'antd';
 
-
 /*
 get current location option for location input
 submit button styling
@@ -11,9 +10,8 @@ submit form  errors
 */
 const Search = () => {
 
-  //CORS NOT SUPPORTED ON GQL AND REST ENDPOINT.. to use JSONP
   const onFinish = (values) => {
-    console.log(values)
+    console.log(values, "make call to proxy")
   }
 
   const getLocation = () => {
