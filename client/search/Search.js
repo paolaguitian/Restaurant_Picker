@@ -2,6 +2,7 @@ import React from 'react';
 import './Search.css'
 import logo from '../logo.png'
 import { Form, Input, Button } from 'antd';
+import axios from 'axios';
 
 /*
 get current location option for location input
@@ -12,6 +13,11 @@ const Search = () => {
 
   const onFinish = (values) => {
     console.log(values, "make call to proxy")
+
+    axios.get('/buisness', values)
+      .then(res => {
+        console.log(res, "then")
+      }).catch(console.log("fail"))
   }
 
   const getLocation = () => {
