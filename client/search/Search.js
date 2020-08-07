@@ -14,16 +14,10 @@ const Search = () => {
   const onFinish = (values) => {
     console.log(values, "make call to proxy")
 
-    axios.get('/buisness', values)
-      //proxy server sending the values injected into query
-      // `
-      //   query business {
-      //     query business(id: "values.location") {
-      //       values.name
-      //     }
-      //   }
+    axios.get('/business', values)
+      //proxy server sending the values
       .then(res => {
-        console.log(res, "then")
+        console.log(res.data, "then")
       }).catch(console.log("fail"))
   }
 
