@@ -14,7 +14,12 @@ const Search = () => {
   const onFinish = (values) => {
     console.log(values, "make call to proxy")
 
-    axios.get('/business', values)
+    axios.get('/search', {
+      params: {
+        term: values.food,
+        location: values.location,
+      }
+    })
       //proxy server sending the values
       .then(res => {
         console.log(res.data, "then")
