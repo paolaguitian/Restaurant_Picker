@@ -6,24 +6,20 @@ import axios from 'axios';
 
 /*
 get current location option for location input
-submit button styling
 submit form  errors
 */
 const Search = () => {
 
   const onFinish = (values) => {
-    console.log(values, "make call to proxy")
-
     axios.get('/search', {
       params: {
         term: values.food,
         location: values.location,
       }
     })
-      //proxy server sending the values
-      .then(res => {
-        console.log(res.data, "then")
-      }).catch(console.log("fail"))
+      .then(({ data } = {}) => {
+        console.log(data.data.search.business)
+      })
   }
 
   const getLocation = () => {
