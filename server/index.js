@@ -26,6 +26,8 @@ app.get('/search', (req, res) => {
               name
               rating
               url
+              image_url
+              price
           }
       }
   }
